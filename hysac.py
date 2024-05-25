@@ -164,7 +164,7 @@ def S3_GetCourseProps():
         soup = BeautifulSoup(resp.content.decode("utf8"),"lxml")
         Rresult["course"] = soup.title.string[7:]
         Rresult["picUrl"]="https://h5.cyol.com/special/daxuexi/"+Rresult["cid"]+"/images/end.jpg"
-        Rresult["EmuUrl"]="https://hang-gl.github.io/Hysac-emu/web/door.html?id="+Rresult["cid"]
+        Rresult["EmuUrl"]="https://hang-gl.github.io/Hysac-emu/door.html?id="+Rresult["cid"]
     except:
         raise HysacException("Can not parse course",sys._getframe().f_lineno)
 
