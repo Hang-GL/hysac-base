@@ -11,7 +11,7 @@
 ### 获取链接
 在微信中打开链接`https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx26a2a915deb3df1c&redirect_uri=https%3A%2F%2Fcp.fjg360.cn%2Fwenda%2F18da%2Frood%3FsessionId%3D%26secret%3D60e9768b2c0ea4b99265237587416905%26tset%3D1&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=0#wechat_redirect`待出现404页面后点击标题右上角的按钮使用浏览器打开，复制链接后运行本项目并输入链接，回车即可完成，此时输出的信息应与在青年大学习页面设置的个人信息相同，同时也会展示你的openID，下次可直接输入openID即可
 ### 命令行/其他应用调用
-使用命令行带参数运行该脚本，将会输入一行JSON字符串，以便其他应用调用和二次开发，输出示例如下
+带参数运行该脚本，将会以JSON字符串作为输出，输出示例如下
 ```JSON
 {
     "code": -1, 
