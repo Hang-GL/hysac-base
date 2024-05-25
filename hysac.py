@@ -85,7 +85,8 @@ Rresult={
     "class":"",
     "picUrl":"",
     "EmuUrl":"",
-    "cid":""
+    "cid":"",
+    "submitted":False
 }
 version=(1,0,0,0)
 urlWithCode=""
@@ -162,6 +163,8 @@ def S3_GetCourseProps():
     try:
         soup = BeautifulSoup(resp.content.decode("utf8"),"lxml")
         Rresult["course"] = soup.title.string[7:]
+        Rresult["picUrl"]="https://h5.cyol.com/special/daxuexi/"+Rresult["cid"]+"/images/end.jpg"
+        Rresult["EmuUrl"]="https://hang-gl.github.io/Hysac-emu/web/door.html?id="+Rresult["cid"]
     except:
         raise HysacException("Can not parse course",sys._getframe().f_lineno)
 
@@ -182,8 +185,7 @@ def S4_SubmitRecord():
     except:
         raise HysacException("Request Error",sys._getframe().f_lineno)
     if resp.get("code") == 1:
-        Rresult["picUrl"]="https://h5.cyol.com/special/daxuexi/"+Rresult["cid"]+"/images/end.jpg"
-        Rresult["EmuUrl"]="https://hang-gl.github.io/Hysac-emu/web/door.html?id="+Rresult["cid"]
+        Rresult["submitted"]=True
     else:
         raise HysacException("Submit record failed",sys._getframe().f_lineno)
 
