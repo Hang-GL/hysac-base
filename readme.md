@@ -1,3 +1,4 @@
+
 # Hubei Youth Study Automatic Completer (Hysac)
 湖北青年大学习自动完成脚本
 ## 申明
@@ -14,17 +15,19 @@
 带参数运行该脚本，将会以JSON字符串作为输出，输出示例如下
 ```JSON
 {
-    "code": -1, 
-    "message": "undefined error", 
+    "code": 209, 
+    "message": "Invalid step info", 
     "OpenID": "", 
     "course": "", 
     "name": "", 
     "section1": "", 
     "section2": "", 
     "section3": "", 
+    "class": "", 
     "picUrl": "", 
     "EmuUrl": "", 
-    "cid": ""
+    "cid": "", 
+    "submitted": false
 }
 ```
 从上到下各值的含义如下：
@@ -42,6 +45,7 @@
 |picUrl|本次课程的背景图|
 |EmuUrl|打开本链接可以截图|
 |cid|课程名对应的编号|
+|submitted|是否提交学习记录|
 
 其中命令行可供使用的参数有
 |参数|说明|

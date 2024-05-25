@@ -298,7 +298,11 @@ def process():
     if(argc<2):
         window_proc()
     else:
-        command_proc()
+        try:
+            command_proc()
+        except HysacException as e:
+            Rresult["code"]=e.Line
+            Rresult["message"]=e.ErrorInfo
         print(json.dumps(Rresult))
 
 
