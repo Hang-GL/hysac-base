@@ -3,7 +3,6 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 import json
-import urllib.parse
 class HysacException(Exception):
     def __init__(self,ErrorInfo,Line):
         super().__init__(self)
