@@ -3,18 +3,18 @@
 ## 申明
 - 本项目仅供学习，**`请勿`使用本脚本完成青年大学习**以及其他非法用途
 - 本项目遵循`Apache 2.0`协议，请在遵顼本协议的条件下使用本项目
-- 本项目的开发者**不会提供任何**关于完成青年大学习的帮助
-- Fork/运行本项目即表示您同意并遵循以上申明
+- 本项目的开发者**不会提供任何**关于使用该脚本完成青年大学习的帮助
+- 使用本项目即表示您同意并遵循以上申明
 ## 使用方法
-### **本节内容仅用于分享实现思路，再次声明`请勿使用本项目完成青年大学习`**
+### **本节内容仅用于分享实现思路，再次声明`请勿使用本脚本完成青年大学习`**
 ### 获取链接
-在微信中打开链接`https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx26a2a915deb3df1c&redirect_uri=https%3A%2F%2Fcp.fjg360.cn%2Fwenda%2F18da%2Frood%3FsessionId%3D%26secret%3D60e9768b2c0ea4b99265237587416905%26tset%3D1&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=0#wechat_redirect`待出现404页面后点击标题右上角的按钮使用浏览器打开，复制链接后运行本项目并输入链接，回车即可完成，此时输出的信息应与在青年大学习页面设置的个人信息相同，同时也会展示你的openID，下次可直接输入openID完成
-### 其他应用调用
-使用命令行带参数运行本项目，本项目将会输入一行JSON字符串以便其他应用调用和二次开发，输出示例如下
+在微信中打开链接`https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx26a2a915deb3df1c&redirect_uri=https%3A%2F%2Fcp.fjg360.cn%2Fwenda%2F18da%2Frood%3FsessionId%3D%26secret%3D60e9768b2c0ea4b99265237587416905%26tset%3D1&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=0#wechat_redirect`待出现404页面后点击标题右上角的按钮使用浏览器打开，复制链接后运行本项目并输入链接，回车即可完成，此时输出的信息应与在青年大学习页面设置的个人信息相同，同时也会展示你的openID，下次可直接输入openID即可
+### 命令行/其他应用调用
+使用命令行带参数运行该脚本，将会输入一行JSON字符串，以便其他应用调用和二次开发，输出示例如下
 ```JSON
 {
-    "code": 226, 
-    "message": "Invalid step info", 
+    "code": -1, 
+    "message": "undefined error", 
     "OpenID": "", 
     "course": "", 
     "name": "", 
@@ -37,7 +37,7 @@
 |section1|所属地区|
 |section2|所属单位|
 |section3|组织|
-|class|班级（用途未知）|
+|class|班级|
 |picUrl|本次课程的背景图|
 |EmuUrl|打开本链接可以截图|
 |cid|课程名对应的编号|
@@ -55,7 +55,7 @@
 ## 运行过程
 本项目运行分为5步，在命令行中通过`-s`参数输入长度为5的字符串即可控制是否运行对应步骤，若步骤对应的字符为`0`则跳过该步，否则正常运行，通过使用该命令可完成其他功能，但也**可能会引发错误**
 
-运行的5个步骤的内容描述如下：
+其中各个步骤的作用如下：
 1. 解析输入的URL并获取OpenID
 2. 通过OpenID获取用户信息
 3. 获取最新课程的编号
